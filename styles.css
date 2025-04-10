@@ -191,9 +191,54 @@ p, li {
 @media print {
     body {
         background: white;
+        margin: 0;
+        padding: 0;
     }
-    
+
     .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px;
         box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+        background-color: white !important;
+    }
+
+    @page {
+        margin: 15mm;
+        size: A4;
+    }
+
+    header, section {
+        break-inside: avoid;
+    }
+
+    .skills-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: #2c3e50 !important;
+    }
+
+    i {
+        color: #3498db !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    h3 {
+        border-bottom-color: #3498db !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 }
