@@ -23,12 +23,16 @@ body {
 
 /* Header Styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid #eee;
+}
+
+.profile {
+    text-align: left;
 }
 
 .profile h1 {
@@ -42,10 +46,14 @@ header {
     color: #3498db;
 }
 
+.contact-info {
+    text-align: left;
+}
+
 .contact-info p {
-    margin: 8px 0;
     display: flex;
     align-items: center;
+    margin: 8px 0;
 }
 
 .contact-info i {
@@ -56,8 +64,7 @@ header {
 
 /* Section Styles */
 section {
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;  /* Giảm margin giữa các section */
     background: #ffffff;
     border-radius: 8px;
 }
@@ -65,8 +72,8 @@ section {
 section h3 {
     font-size: 1.4em;
     color: #2c3e50;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 15px;  /* Giảm margin dưới heading */
+    padding-bottom: 8px;  /* Giảm padding dưới heading */
     border-bottom: 2px solid #3498db;
 }
 
@@ -199,15 +206,15 @@ p, li {
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 20px;
+        padding: 15mm !important; /* Remove extra padding and margins */
         box-shadow: none;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
     section {
+        margin-bottom: 12px !important;  /* Giảm khoảng cách giữa các section khi in */
         page-break-inside: avoid;
-        margin-bottom: 15px;
         background-color: white !important;
     }
 
@@ -216,18 +223,60 @@ p, li {
         size: A4;
     }
 
-    header, section {
-        break-inside: avoid;
+    header {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
     }
 
+    .profile {
+        flex: 1;
+        text-align: left !important;
+    }
+
+    .contact-info {
+        flex: 1;
+        text-align: left !important;
+        margin-top: 0 !important;
+    }
+
+    .contact-info p {
+        justify-content: flex-start !important;
+    }
+
+    /* Fix skills grid layout */
     .skills-grid {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+        page-break-inside: avoid;
     }
 
-    a {
-        text-decoration: none;
+    .skill-category {
+        page-break-inside: avoid;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    /* Optimize space between sections */
+    .summary, .education, .projects, .skills, .additional-skills {
+        page-break-inside: avoid;
+    }
+
+    /* Ensure consistent spacing */
+    p, ul {
+        margin-bottom: 8px !important;
+    }
+
+    .edu-item, .exp-item {
+        margin-bottom: 12px !important;
+    }
+
+    /* Ensure colors and borders print correctly */
+    .profile h1, .profile h2 {
         color: #2c3e50 !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 
     i {
