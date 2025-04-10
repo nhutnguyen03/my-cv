@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 30px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.profile h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.profile h2 {
+    font-size: 1.3em;
+    color: #3498db;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    width: 20px;
+    margin-right: 10px;
+    color: #3498db;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+section h3 {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.objectives ul {
+    margin-left: 20px;
+    color: #2c3e50;
+}
+
+.objectives li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Text alignment for paragraphs and lists */
+p, li {
+    text-align: justify;
+}
+
+.summary p {
+    text-align: justify;
+}
+
+.objectives ul li {
+    text-align: justify;
+}
+
+.edu-item ul li {
+    text-align: justify;
+}
+
+.exp-item ul li {
+    text-align: justify;
+}
+
+.projects ul li {
+    text-align: justify;
+}
+
+.additional-skills ul li {
+    text-align: justify;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.skill-category h4 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-category li:before {
+    content: "▹";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
+/* Education & Projects */
+.edu-item, .exp-item {
+    margin-bottom: 20px;
+}
+
+.edu-item h4, .exp-item h4 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.school, .company {
+    color: #3498db;
+    font-weight: 500;
+}
+
+.duration {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+}
